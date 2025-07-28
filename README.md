@@ -1,10 +1,8 @@
 # stm32_projects
 
-This repository includes a collection of STM32F103 projects developed on Ubuntu 22.04, using cross
+This repository includes a collection of STM32F103 projects developed on Ubuntu 22.04, using cross-compiler to generate bin file and using STM32CubeProgrammer to burn on the board.
 
--compiler to generate bin file and using STM32CubeProgrammer to burn on the board.
-
-## 📚 Projects
+## Projects
 
 | Folder                  | Description                          |
 |-------------------------|--------------------------------------|
@@ -26,7 +24,7 @@ Each folder contains its own README and source code.
 
 ---
 
-### 👣 Getting Started
+###  Getting Started
 ```bash
 git clone https://github.com/LinTinWei/stm32_projects.git
 cd stm32_UART_LED
