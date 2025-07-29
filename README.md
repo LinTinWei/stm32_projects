@@ -13,7 +13,8 @@ This repository includes a collection of STM32F103 projects developed on Ubuntu 
 | `stm32_UART_ADC`        | Read ADC and send via UART           |
 | `stm32_UART_LED`        | UART receive to control LED state    |
 | `stm32_DMA_ADC`         | Continuous ADC sampling with DMA     |
-| `stm32_multi-channel_ADC` | ADC on PA0/PA1 and UART streaming |
+| `stm32_multi-channel_ADC` | ADC on PA0/PA1 and UART streaming  |
+| `stm32_FreeRTOS`        | Burn Real-time OS bin file on board  |
 
 Each folder contains its own README and source code.
 
