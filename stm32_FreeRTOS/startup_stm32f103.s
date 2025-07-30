@@ -15,9 +15,8 @@
 .word   vPortSVCHandler     /* SVC_Handler */
 .word   0                   /* DebugMon_Handler */
 .word   0                   /* 保留 */
-.word   xPortPendSVHandler  /* PendSV_Handler */
-.word   xPortSysTickHandler 
-.word   SysTick_Handler     /* SysTick_Handler */
+.word   0		    /* PendSV_Handler */
+.word   0		    /* SysTick_Handler */
 
 .text
 .global Reset_Handler
