@@ -12,11 +12,12 @@
 .word   0                   /* BusFault_Handler */
 .word   0                   /* UsageFault_Handler */
 .word   0,0,0,0             /* 保留 */
-.word   0                   /* SVC_Handler */
+.word   vPortSVCHandler     /* SVC_Handler */
 .word   0                   /* DebugMon_Handler */
 .word   0                   /* 保留 */
-.word   0                   /* PendSV_Handler */
-.word   0                   /* SysTick_Handler */
+.word   xPortPendSVHandler  /* PendSV_Handler */
+.word   xPortSysTickHandler 
+.word   SysTick_Handler     /* SysTick_Handler */
 
 .text
 .global Reset_Handler

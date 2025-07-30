@@ -6,6 +6,7 @@ LDFLAGS = -Tlinker.ld -nostartfiles -lc -lgcc -lnosys
 #Source
 SRCS = main.c \
        drivers/uart.c \
+       drivers/led.c \
        freertos/tasks.c \
        freertos/list.c \
        freertos/queue.c \
@@ -13,6 +14,7 @@ SRCS = main.c \
        freertos/portable/GCC/ARM_CM3/port.c \
        freertos/portable/MemMang/heap_4.c \
        syscalls.c \
+       interrupt.c \
        startup_stm32f103.s
 
 #include path

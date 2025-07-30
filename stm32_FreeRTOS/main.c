@@ -1,22 +1,26 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "uart.h"
+#include "led.h"
 
-void task1(void *param) {
-	while (1) {
-		uart_print("Hello from Task1 \r\n");
-		vTaskDelay(1000 / portTICK_PERIOD_MS);
-	}
-}
 
+// task.c 中宣告的任務函數
+void vTaskLED(void *pvParameters);
+void vTaskUART(void *pvParameters);
 
 int main(void) {
     	uart_init();
+	led_init();	
 	uart_print("FreeRTOS STM32 Starting...\r\n");
 
-	// xTaskCreate(task1, "Task1", 128, NULL, 1, NULL);
+	if (xTaskCreate(vTaskLED, "LED", 128, NULL, 1, NULL) != pdPASS)
+    		uart_print("Task LED creation failed!\r\n");
+	if (xTaskCreate(vTaskUART, "UART", 128, NULL, 2, NULL) != pdPASS)
+    		uart_print("Task UART creation failed!\r\n");
 
-	// vTaskStartScheduler();
+	uart_print("Starting scheduler...\r\n");
+	vTaskStartScheduler();
+	uart_print("Scheduler failed to start!\r\n");  // 若看到這句就代表 FreeRTOS 出錯
 
-	// while(1);	// 不會進來
+	return 0;
 }
